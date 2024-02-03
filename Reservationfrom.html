@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>FreeLancer Booking Form</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"
+      
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      href="C:\Users\Yahoo Url S. Mibato\Documents\BSCPE DAY\4th Year 1st sem\Magic\marvs gorup\workwave\images\logo.png"
+      type="image/icon type"
+    />
+    <link />
+    <style>
+      html,
+      body {
+        min-height: 100%;
+      }
+      body,
+      div,
+      form,
+      input,
+      select,
+      textarea,
+      p {
+        padding: 0;
+        margin: 0;
+        outline: none;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 14px;
+        color: #c73030;
+        line-height: 22px;
+      }
+      h1 {
+        position: absolute;
+        margin: 0;
+        font-size: 32px;
+        color: #cfcccb;
+        z-index: 2;
+      }
+      .testbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        padding: 10px;
+      }
+      form {
+        width: 80%;
+        padding: 20px;
+        border-radius: 6px;
+        background-color: whitesmoke;
+        box-shadow: 0 0 20px 0 #2855a8;
+      }
+      .banner {
+        position: relative;
+        height: 210px;
+        background: url("file:///C:/Users/Yahoo%20Url%20S.%20Mibato/Documents/BSCPE%20DAY/4th%20Year%201st%20sem/Magic/marvs%20gorup/workwave/images/account-bg.png")
+          no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .banner::after {
+        content: "";
+
+        background-color: transparent;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      input,
+      textarea,
+      select {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      input {
+        width: calc(100% - 10px);
+        padding: 5px;
+      }
+      select {
+        width: 100%;
+        padding: 7px 0;
+        background: transparent;
+      }
+      textarea {
+        width: calc(100% - 12px);
+        padding: 5px;
+      }
+      .item:hover p,
+      .item:hover i,
+      .question:hover p,
+      .question label:hover,
+      input:hover::placeholder {
+        color: #a82877;
+      }
+      .item input:hover,
+      .item select:hover,
+      .item textarea:hover {
+        border: 1px solid transparent;
+        box-shadow: 0 0 6px 0 #a82877;
+        color: #a82877;
+      }
+      .item {
+        position: relative;
+        margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+        display: none;
+      }
+      .item i,
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        position: absolute;
+        font-size: 20px;
+        color: #a9a9a9;
+      }
+      .item i {
+        right: 1%;
+        top: 30px;
+        z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+        right: 0;
+        z-index: 2;
+        opacity: 0;
+        cursor: pointer;
+      }
+      input[type="time"]::-webkit-inner-spin-button {
+        margin: 2px 22px 0 0;
+      }
+      input[type="radio"],
+      input.other {
+        display: none;
+      }
+      label.radio {
+        position: relative;
+        display: inline-block;
+        margin: 5px 20px 10px 0;
+        cursor: pointer;
+      }
+      .question span {
+        margin-left: 30px;
+      }
+      label.radio:before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+      }
+      #radio_5:checked ~ input.other {
+        display: block;
+      }
+      input[type="radio"]:checked + label.radio:before {
+        border: 2px solid #a82877;
+        background: #a82877;
+      }
+      label.radio:after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        width: 7px;
+        height: 4px;
+        border: 3px solid #fff;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        opacity: 0;
+      }
+      input[type="radio"]:checked + label:after {
+        opacity: 1;
+      }
+      .btn {
+        margin-top: 10px;
+        text-align: center;
+      }
+      button {
+        width: 150px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #4649ee;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #bf4c1e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+        <form action="https://docs.google.com/forms/d/e/1LjzwW-ncsgvrJB4bMuEFMVvy2PFb77O2TlnBV5Htbps/formResponse" method="post" target="_self">
+      <form action="/">
+        <div class="banner">
+          <h1>WeWork Booking Form</h1>
+        </div>
+        <div class="item">
+          <p>Date of Event</p>
+          <input type="date" name="bdate" />
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="item">
+          <p>Time of Event</p>
+          <input type="time" name="name" />
+          <i class="fas fa-clock"></i>
+        </div0>
+        <div class="item">
+          <p>Select FreeLancer</p>
+          <select>
+            <option value=""></option>
+            <option value="1">*Please select*</option>
+            <option value="2">Francis Gio Laurel</option>
+            <option value="3">Herchell Thomas Alga</option>
+            <option value="4">Andre Cosep Baguio</option>
+            <option value="5">Yahoo Url S. Mibato</option>
+            <option value="5">June Juring</option>
+            <option value="5">Marvy Carl Revilla</option>
+          </select>
+        </div>
+        <div class="item">
+          <p>Description of Event</p>
+          <textarea rows="3"></textarea>
+        </div>
+        <div class="item">
+          <p>Promoter's Name</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="item">
+          <p>Venue Name</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="item">
+          <p>Venue Address</p>
+          <input type="text" name="name" placeholder="Street address" />
+          <input type="text" name="name" placeholder="Street address line 2" />
+          <div class="city-item">
+            <input type="text" name="name" placeholder="City" />
+            <input type="text" name="name" placeholder="Region" />
+            <input type="text" name="name" placeholder="Postal / Zip code" />
+          </div>
+        </div>
+        <div class="item">
+          <p>Venue Capacity</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="item">
+          <p>Expected Attendance</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="item">
+          <p>Type of Job</p>
+          <select>
+            <option value=""></option>
+            <option value="1">*Please select*</option>
+            <option value="2">SDE</option>
+            <option value="3">Full Band</option>
+            <option value="3">Photo</option>
+            <option value="3">Session</option>
+            <option value="3">Guitarist</option>
+            <option value="3">Keybordist</option>
+          </select>
+        </div>
+        <div class="item">
+          <p>Set Time (in minutes)</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="item">
+          <p>Contact Person</p>
+          <div class="name-item">
+            <input type="text" name="name" placeholder="First" />
+            <input type="text" name="name" placeholder="Last" />
+          </div>
+        </div>
+        <div class="item">
+          <p>Contact Email</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="item">
+          <p>Contact Number</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="question">
+          <p>Will this event be recorded?</p>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_1" name="recorded" />
+              <label for="radio_1" class="radio"><span>Yes</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_2" name="recorded" />
+              <label for="radio_2" class="radio"><span>No</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="btn">
+            <a
+              href=""
+              style="margin-top: 0"
+              onclick="submitForm(showSuccessNotification)"
+              >submit</a
+            >
+            <a href="#" style="margin-top: 0" onclick="saveToExcel()"
+            
+              
+            >
+          </div>
+          <div>
+            <div class="btn">
+            <a href="jobs.html" style="margin-right: 9"logout-btn">Close</a
+          </div>
+      </form>
+     
+    </div>
+    <div>
+        
+    </div>
+
+    <script src="js/script.js"></script>
+
+   
+
+  </body>
+</html>

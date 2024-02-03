@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>All Jobs Popup</title>
+   <link rel="icon" href="C:\Users\Yahoo Url S. Mibato\Documents\BSCPE DAY\4th Year 1st sem\Magic\marvs gorup\workwave\images\logo.png" type="image/icon type">
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+     
+  </style>
+</head>
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+   <section class="flex">
+      <div id="menu-btn" class="fas fa-bars-staggered"></div>
+      <a href="jobs.html" class="logo"><img src="images\logo.png" alt="Logo"> WeWork</a>
+      <nav class="navbar">
+         <!-- <a href="home.html">home</a> -->
+         <a href="about.html">about us</a>
+         <a href="jobs.html">Freelancers</a>
+         <a href="contact.html">contact us</a>
+         
+      </nav>
+      <a href="Reservationfrom.html" class="btn" onclick="openPopup('marvsview_job.html')">Hire Now</a>
+      <!-- <a href="#" class="btn" onclick="openPopup('marvsview_job.html')">view details</a>
+            -->
+      <a href="login.html" class="logout-btn">Logout</a
+   </section>
+</header>
+
+<!-- header section ends -->
+
+<!-- job filter section stars  -->
+
+<!-- <section class="job-filter">
+   <h1 class="heading">filter jobs</h1>
+   <form action="" method="post">
+      <div class="flex">
+         <div class="box">
+            <p>job title <span></span></p>
+            <input type="text" name="title" placeholder="Keyword" required maxlength="20" class="input">
+         </div>
+         <div class="box">
+            <p>job location</p>
+            <input type="text" name="location" placeholder="City, Purok, or Barangay" required maxlength="50" class="input">
+         </div>
+      </div>
+      <div class="dropdown-container">
+         <div class="dropdown">
+            <input type="text" readonly placeholder="date posted" name="date" maxlength="20" class="output">
+            <div class="lists">
+               <p class="items">today</p>
+               <p class="items">3 days ago</p>
+               <p class="items">7 days ago</p>
+               <p class="items">10 days ago</p>
+               <p class="items">15 days ago</p>
+               <p class="items">30 days ago</p>
+            </div>
+         </div>
+         <div class="dropdown">
+            <input type="text" readonly name="date" placeholder="estimated salary" maxlength="20" class="output">
+            <div class="lists">
+               <p class="items">1.5k or less PHP</p>
+                  <p class="items">1.5k - 5k PHP</p>
+                  <p class="items">5k - 10k PHP</p>
+                  <p class="items">10k - 20k PHP</p>
+                  <p class="items">20k - 30k PHP</p>
+                  <p class="items">30k - 40k PHP</p>
+                  <p class="items">40k - 50k PHP</p>
+                  <p class="items">50k - 60k PHP</p>
+                  <p class="items">60k - 65k PHP</p>
+                  <p class="items">65k - 150k PHP</p>
+                
+
+            </div>
+         </div>
+         <div class="dropdown">
+            <input type="text" readonly name="date" placeholder="job type" maxlength="20" class="output">
+            <div class="lists">
+               <p class="items">full-time</p>
+               <p class="items">part-time</p>
+               <p class="items">intership</p>
+               <p class="items">contract</p>
+               <p class="items">temporary</p>
+               
+            </div>
+         </div>
+         <div class="dropdown">
+            <input type="text" readonly name="date" placeholder="education level" maxlength="20" class="output">
+            <div class="lists">
+               <p class="items">student degree</p>
+               <p class="items">non-student degree</p>
+               <p class="items">bachlelor's degree</p>
+               <p class="items">master's degree</p>
+               <p class="items">diploma</p>
+            </div>
+         </div>
+         <div class="dropdown">
+            <input type="text" readonly name="date" placeholder="work shifts" maxlength="20" class="output">
+            <div class="lists">
+               <p class="items">day shift</p>
+               <p class="items">night shift</p>
+               <p class="items">flexible shift</p>
+               <p class="items">fixed shift</p>
+            </div>
+         </div>
+      </div>
+   </form>
+
+</section> -->
+
+<!-- job filter section ends -->
+
+<!-- all jobs section starts  -->
+
+<section class="jobs-container">
+
+   <h1 class="heading">Freelancers</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="company">
+            <img src="images/pic-1.jpg" alt="">
+            <div>
+               <h3>Herchell</h3>
+               <p>2 days ago</p>
+            </div>
+         </div>
+         <h3 class="job-title">All around</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i> <span>Danao, Cebu, Philippines</span></p>
+         <div class="tags">
+            <!-- Tag with peso sign and salary range -->
+            <p><i class="fas fa-money-bill-wave"></i> <span>10k - 25k PHP</span></p>
+            <!-- Tag with briefcase icon and job type -->
+            <p><i class="fas fa-briefcase"></i> <span>part-time</span></p>
+            <!-- Tag with clock icon and shift type -->
+            <p><i class="fas fa-clock"></i> <span>day shift</span></p>
+        </div>
+        
+        <div class="flex-btn">
+         <a href="#" class="btn" onclick="openPopup('herchellview_job.html')">view details</a>
+         
+        
+         
+     </div>
+
+
+     <!-- Trigger button to open the popup -->
+<button onclick="openPopup('herchellview_job.html')"></button>
+
+<!-- Add the popup overlay with an id -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <!-- Close button for the popup -->
+        <a href="#" class="close-btn" onclick="closePopup()">&times;</a>
+        <!-- Content of the popup  -->
+        <iframe id="popupIframe" frameborder="0"></iframe>
+    </div>
+</div>
+      </div>
+
+      <div class="box">
+         <div class="company">
+            <img src="images/pic-2.jpg" alt="">
+            <div>
+               <h3>Gio</h3>
+               <p>2 days ago</p>
+            </div>
+         </div>
+         <h3 class="job-title">Photographer</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i> <span>Danao, Cebu, Philippines</span></p>
+         <div class="tags">
+            <p><i class="fas fa-money-bill-wave"></i> <span>10k - 25k PHP</span></p>
+            <p><i class="fas fa-briefcase"></i> <span>full-time</span></p>
+            <p><i class="fas fa-clock"></i> <span>flexible shifts</span></p>
+         </div>
+          <div class="flex-btn">
+         <a href="#" class="btn" onclick="openPopup('gioview_job.html')">view details</a>
+         
+
+         
+     </div>
+
+
+     <!-- Trigger button to open the p1opup -->
+<button onclick="openPopup('gioview_job.html')"></button>
+
+<!-- Add the popup overlay with an id -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <!-- Close button for the popup -->
+        <a href="#" class="close-btn" onclick="closePopup()">&times;</a>
+        <!-- Content of the popup  -->
+        <iframe id="popupIframe" frameborder="0"></iframe>
+    </div>
+</div>
+      </div>
+
+      <div class="box">
+         <div class="company">
+            <img src="images/pic-3.jpg" alt="">
+            <div>
+               <h3>June</h3>
+               <p>posted today</p>
+            </div>
+         </div>
+         <h3 class="job-title">Fingerist</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i> <span>Catmon, Cebu Philippines</span></p>
+         <div class="tags">
+            <p><i class="fas fa-money-bill-wave"></i> <span>10k - 25k PHP</span></p>
+            <p><i class="fas fa-briefcase"></i> <span>intership</span></p>
+            <p><i class="fas fa-clock"></i> <span>night shift</span></p>
+         </div>
+         <div class="flex-btn">
+         <a href="#" class="btn" onclick="openPopup('Juneview_job.html')">view details</a>
+         
+
+         
+     </div>
+
+
+     <!-- Trigger button to open the popup -->
+<button onclick="openPopup('Juneview_job.html')"></button>
+
+<!-- Add the popup overlay with an id -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <!-- Close button for the popup -->
+        <a href="#" class="close-btn" onclick="closePopup()">&times;</a>
+        <!-- Content of the popup  -->
+        <iframe id="popupIframe" frameborder="0"></iframe>
+    </div>
+</div>
+      </div>
+
+      <div class="box">
+         <div class="company">
+            <img src="images/pic-4.jpg" alt="">
+            <div>
+               <h3>Yahoo Url</h3>
+               <p>19 days ago</p>
+            </div>
+         </div>
+         <h3 class="job-title">Shooter</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i> <span>Compostela, Cebu Philippines</span></p>
+         <div class="tags">
+            <p><i class="fas fa-money-bill-wave"></i> <span>10k - 25k PHP</span></p>
+            <p><i class="fas fa-briefcase"></i> <span>contract</span></p>
+            <p><i class="fas fa-clock"></i> <span>fixed shift</span></p>
+         </div>
+         <div class="flex-btn">
+            <a href="#" class="btn" onclick="openPopup('yahooview_job.html')">view details</a>
+         
+   
+            
+        </div>
+   
+   
+        <!-- Trigger button to open the popup -->
+   <button onclick="openPopup('yahooview_job.html')"></button>
+   
+   <!-- Add the popup overlay with an id -->
+   <div class="popup-overlay" id="popupOverlay">
+       <div class="popup-content">
+           <!-- Close button for the popup -->
+           <a href="#" class="close-btn" onclick="closePopup()">&times;</a>
+           <!-- Content of the popup  -->
+           <iframe id="popupIframe" frameborder="0"></iframe>
+       </div>
+   </div>
+      </div>
+
+      <div class="box">
+         <div class="company">
+            <img src="images/pic-5.jpg" alt="">
+            <div>
+               <h3>Marvy Carl</h3>
+               <p>2 days ago</p>
+            </div>
+         </div>
+         <h3 class="job-title">Video Editor</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i> <span>liloan, Cebu Philippines</span></p>
+         <div class="tags">
+            <p><i class="fas fa-money-bill-wave"></i> <span>10k - 25k PHP</span></p>
+            <p><i class="fas fa-briefcase"></i> <span>part-time</span></p>
+            <p><i class="fas fa-clock"></i> <span>flexible shifts</span></p>
+         </div>
+         <div class="flex-btn">
+            <a href="#" class="btn" onclick="openPopup('marvsview_job.html')">view details</a>
+           
+   
+            
+        </div>
+   
+   
+        <!-- Trigger button to open the popup -->
+   <button onclick="openPopup('marvsview_job.html')"></button>
+   
+   <!-- Add the popup overlay with an id -->
+   <div class="popup-overlay" id="popupOverlay">
+       <div class="popup-content">
+           <!-- Close button for the popup -->
+           <a href="#" class="close-btn" onclick="closePopup()">&times;</a>
+           <!-- Content of the popup  -->
+           <iframe id="popupIframe" frameborder="0"></iframe>
+       </div>
+   </div>
+      </div>
+
+      <div class="box">
+         <div class="company">
+            <img src="images/pic-6.jpg" alt="">
+            <div>
+               <h3>Andre</h3>
+               <p>2 days ago</p>
+            </div>
+         </div>
+         <h3 class="job-title">Videographer</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i> <span>Danao, Cebu Philippines</span></p>
+         <div class="tags">
+            <p><i class="fas fa-money-bill-wave"></i> <span>10k - 25k PHP</span></p>
+            <p><i class="fas fa-briefcase"></i> <span>part-time</span></p>
+            <p><i class="fas fa-clock"></i> <span>fixed shift</span></p>
+         </div>
+         <div class="flex-btn">
+            <a href="#" class="btn" onclick="openPopup('titingview_job.html')">view details</a>
+         
+   
+            
+        </div>
+   
+   
+        <!-- Trigger button to open the popup -->
+   <button onclick="openPopup('titingview_job.html')"></button>
+   
+   <!-- Add the popup overlay with an id -->
+   <div class="popup-overlay" id="popupOverlay">
+       <div class="popup-content">
+           <!-- Close button for the popup -->
+           <a href="#" class="close-btn" onclick="closePopup()">&times;</a>
+           <!-- Content of the popup  -->
+           <iframe id="popupIframe" frameborder="0"></iframe>
+       </div>
+   </div>
+      </div>
+
+      
+
+   </div>
+
+</section>
+
+
+<!-- all jobs section ends -->
+
+
+<!-- footer section starts  -->
+
+<footer class="footer">
+
+   <section class="grid">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <!-- <a href="home.html"><i class="fas fa-angle-right"></i> Home</a> -->
+         <a href="about.html"><i class="fas fa-angle-right"></i> About</a>
+      
+         <a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a>
+         
+      </div>
+
+      <div class="box">
+         <h3>extra links</h3>
+         
+         <a href="login.html"><i class="fas fa-angle-right"></i> Login</a>
+         <a href="register.html"><i class="fas fa-angle-right"></i> Register</a>
+         <a href="Reservationfrom.html"><i class="fas fa-angle-right"></i> Hire Now</a>
+        
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+         
+         <!-- <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      
+         <a href="#"><i class="fab fa-youtube"></i> Youtube</a> -->
+      </div>
+
+   </section>
+
+   <!-- <div class="credit">MOVING ADS</div> -->
+
+</footer>
+
+</footer>
+
+<!-- footer section ends -->
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+
+let dropdown_items = document.querySelectorAll('.job-filter form .dropdown-container .dropdown .lists .items');
+
+dropdown_items.forEach(items =>{
+   items.onclick = () =>{
+      items_parent = items.parentElement.parentElement;
+      let output = items_parent.querySelector('.output');
+      output.value = items.innerText;
+   }
+});
+
+</script>
+
+   
+</body>
+</html>

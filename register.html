@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="icon"
+      href="C:\Users\Yahoo Url S. Mibato\Documents\BSCPE DAY\4th Year 1st sem\Magic\marvs gorup\workwave\images\logo.png"
+      type="image/icon type"
+    />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+   
+
+    <div class="account-form-container">
+      <section class="account-form">
+        <form id="registerForm" action="" method="post">
+          <h3>create new account!</h3>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            maxlength="20"
+            placeholder="First Name"
+            class="input"
+          />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            maxlength="20"
+            placeholder="Last Name"
+            class="input"
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            maxlength="50"
+            placeholder="Email"
+            class="input"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            maxlength="20"
+            placeholder="Password"
+            class="input"
+          />
+          <p>already have an account? <a href="login.html">login now</a></p>
+          <a href="jobs.html"> <button type="submit" name="submit" class="btn">Register Now</button></a>
+        </form>
+        <div id="successMessage" class="success-message"></div>
+      </section>
+    </div>
+
+    
+
+</footer>
+
+</footer> 
+
+    
+  
+  <!-- custom js file link  -->
+  <script src="js/script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import {
+      getDatabase,
+      set,
+      ref,
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyAKOvGagoPuOM660SwJRqE0Gto8fq_ac3M",
+    authDomain: "wework-89850.firebaseapp.com",
+    projectId: "wework-89850",
+    storageBucket: "wework-89850.appspot.com",
+    messagingSenderId: "233463971786",
+    appId: "1:233463971786:web:51e4fcb530d028df989933"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const auth = getAuth(app);
+
+    let Email = document.getElementById("email");
+    let Password = document.getElementById("password");
+    let FirstName = document.getElementById("firstName");
+    let LastName = document.getElementById("lastName");
+    let RegisterForm = document.getElementById("registerForm");
+
+    let register = (event) => {
+      event.preventDefault();
+      createUserWithEmailAndPassword(auth, Email.value, Password.value)
+        .then((credentials) => {
+          console.log(credentials);
+          set(ref(db, "UsersAuthList/" + credentials.user.uid), {
+            firstname: FirstName.value,
+            lastname: LastName.value,
+          });
+        })
+        .catch((error) => alert(error.message));
+        
+        console.log(error.message);
+
+    };
+    registerForm,addEventListener('submit', register);
+
+    
+  </script>
+ </body>
+</html>

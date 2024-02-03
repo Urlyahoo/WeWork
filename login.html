@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="icon"
+      href="C:\Users\Yahoo Url S. Mibato\Documents\BSCPE DAY\4th Year 1st sem\Magic\marvs gorup\workwave\images\logo.png"
+      type="image/icon type"
+    />
+
+    <!-- custom css file link  -->
+    <
+    <link rel="stylesheet" href="css/style.css" />
+   
+  </head>
+  <body>
+  
+      </section>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- account section starts  -->
+
+    <div class="account-form-container">
+      <section class="account-form">
+        <form id="loginForm" action="" method="post">
+          <h3>welcome!</h3>
+          <input
+            type="email"
+            id="email"
+            required
+            name="email"
+            maxlength="50"
+            placeholder="Email"
+            class="input"
+            placeholder="Enter your email">
+          />
+          <input
+            type="password"
+            id="password"
+            required
+            name="password"
+            maxlength="20"
+            placeholder="Password"
+            class="input"
+            placeholder="Enter your password"
+          />
+          <p>don't have an account? <a href="register.html">register now</a></p>
+          <button type="submit" id="loginForm" name="loginForm" class="btn">Login</button>
+
+        </form>
+        
+      </section>
+    </div>
+
+    
+
+    
+    <script src="js/script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import {getDatabase,set,ref,child,} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyAKOvGagoPuOM660SwJRqE0Gto8fq_ac3M",
+    authDomain: "wework-89850.firebaseapp.com",
+    projectId: "wework-89850",
+    storageBucket: "wework-89850.appspot.com",
+    messagingSenderId: "233463971786",
+    appId: "1:233463971786:web:51e4fcb530d028df989933"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const auth = getAuth(app);
+    const dbref = ref(db);
+
+    let Email = document.getElementById("email");
+    let Password = document.getElementById("password");
+    let loginForm = document.getElementById("loginForm");
+
+    let SignInUser = (event) => {
+  event.preventDefault();
+  
+  signInWithEmailAndPassword(auth, Email.value, Password.value)
+    .then((credentials) => {
+      console.log(credentials);
+      window.location.href = "jobs.html";
+      
+      
+    })
+    .catch((error) => {
+      console.error("Error signing in:", error);
+    });
+};
+    loginForm,addEventListener('submit', SignInUser);
+
+  
+
+    </script>
+  </body>
+</html>
